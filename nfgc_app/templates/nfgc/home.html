@@ -1,0 +1,424 @@
+{% extends "nfgc/base.html" %} {% load static %} {% block content %}
+
+<div class="hero-section">
+  <div class="hero-section-text">
+    <h1>N0 FUSS GAME SENSITIVITY CONVERTER</h1>
+    <h5></h5>
+  </div>
+</div>
+
+<ul class="tabs" data-tabs id="tabs_example">
+  <li class="tabs-title is-active">
+    <a href="#tab1">Game Sensitivity -> Game Sensitivity</a>
+  </li>
+  <li class="tabs-title"><a href="#tab2">CM/360 -> Game Sensitivity</a></li>
+  <li class="tabs-title"><a href="#tab3">Custom</a></li>
+</ul>
+
+<div class="tabs-content" data-tabs-content="tabs_example">
+  <div class="tabs-panel is-active" id="tab1">
+    <div class="translucent-form-overlay">
+      <form>
+        <h3>Game Sensitivity -> Game Sensitivity</h3>
+
+        <div style="width: 40%; float: left">
+          <div class="row old">
+            <div class="columns form-group">
+              <label
+                >Convert from
+                <select
+                  class="fc game"
+                  title="Game to convert from"
+                >
+                  <option>Cm per 360°</option>
+                  <option>--------</option>
+                  <option selected>CS:GO</option>
+                </select></label
+              >
+            </div>
+
+            <div class="columns form-group" style="display: none">
+              <label
+                >FOV
+                <input
+                  type="number"
+                  class="fc fov"
+                  value="100"
+              /></label>
+            </div>
+
+            <div class="columns form-group">
+              <label
+                >Sensitivity
+                <input
+                  type="number"
+                  class="fc sensitivity"
+                  value="1.5"
+                  title="In-game sensitivity to convert from"
+              /></label>
+            </div>
+
+            <div class="columns-4 form-group">
+              <label
+                >Mouse DPI
+                <input
+                  type="text"
+                  class="fc dpi"
+                  value="800"
+                  title="mouse DPI"
+              /></label>
+            </div>
+          </div>
+        </div>
+
+        <div style="width: 40%; float: right">
+          <div class="row goal">
+            <div class="columns form-group">
+              <label
+                >Convert to
+                <select
+                  class="fc game"
+                  
+                  data-placement="top"
+                  title="Game to convert to"
+                >
+                  <option>Cm per 360°</option>
+                  <option>--------</option>
+                  <option>CS:GO</option>
+                  <option selected>Fortnite</option>
+                </select></label
+              >
+            </div>
+
+            <div class="columns form-group" style="display: none">
+              <label
+                >FOV
+                <input
+                  type="number"
+                  class="fc fov"
+                  value="100"
+              /></label>
+            </div>
+
+            <div class="columns form-group">
+              <label
+                >Sensitivity
+                <input
+                  type="number"
+                  class="fc sensitivity"
+                  value="1"
+                  title="Calculated sensitivity"
+                  readonly
+              /></label>
+            </div>
+
+            <div class="columns-2 form-group">
+              <label
+                >Cm per 360°
+                <input
+                  type="text"
+                  class="fc cmp360"
+                  value="43"
+                  title="CM to do a 360° turn in game"
+                  readonly
+              /></label>
+            </div>
+          </div>
+        </div>
+
+
+        <button type="button" class="primary button expanded search-button">
+          Convert
+        </button>
+
+
+
+      <div></div>  
+      </form>
+    </div>
+  </div>
+
+  <div class="tabs-panel" id="tab2">
+    <div class="translucent-form-overlay">
+      <form>
+        <h3>CM360 -> Game Sensitivity</h3>
+
+        <div class="row dest">
+          <div class="columns form-group3">
+            <label
+              >Convert to
+              <select
+                class="fc game"
+                title="Game to convert to"
+              >
+                <option>CM PER 360</option>
+                <option>--------</option>
+                <option>CS:GO</option>
+                <option selected>Fortnite</option>
+              </select></label
+            >
+          </div>
+
+          <div class="columns form-group3">
+            <label
+              >Mouse DPI
+              <input
+                type="text"
+                class="fc dpi"
+                value="800"
+                title="Your mouse DPI (found in mouse software). Only used to calculate 360 distances."
+            /></label>
+          </div>
+
+          <div class="columns form-group3" style="display: none">
+            <label
+              >FOV
+              <input
+                type="number"
+                class="fc fov"
+                value="100"
+            /></label>
+          </div>
+
+          <div class="columns form-group3">
+            <label
+              >Sensitivity
+              <input
+                type="number"
+                class="fc sensitivity"
+                value="1"
+                title="Calculated in-game sensitivity"
+                readonly
+            /></label>
+          </div>
+
+          <div class="columns form-group3">
+            <label
+              >Cm per 360
+              <input
+                type="text"
+                class="fc dest-cmp360"
+                value="43"
+                title="Centimeters to turn 360°"
+            /></label>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <div class="tabs-panel" id="tab3">
+    <div class="translucent-form-overlay">
+      <form>
+        <h3>Game Sensitivity -> Game Sensitivity</h3>
+
+        <div style="width: 40%; float: left">
+          <div class="row src">
+            <div class="columns form-group3">
+              <label
+                >Convert from
+                <select
+                  class="fc game"
+                  title="Game to convert from"
+                >
+                  <option>CM PER 360</option>
+                  <option>--------</option>
+                  <option selected>CS:GO</option>
+                </select></label
+              >
+            </div>
+
+            <div class="columns form-group3" style="display: none">
+              <label
+                >FOV
+                <input
+                  type="number"
+                  class="fc fov"
+                  value="100"
+              /></label>
+            </div>
+
+            <div class="columns form-group3">
+              <label
+                >Sensitivity
+                <input
+                  type="number"
+                  class="fc sensitivity"
+                  value="1.5"
+                  title="In-game sensitivity to convert from"
+              /></label>
+            </div>
+
+            <div class="columns form-group3">
+              <label
+                >Mouse DPI
+                <input
+                  type="text"
+                  class="fc dpi"
+                  value="800"
+                  title="Your mouse DPI (found in mouse software). Only used to calculate 360 distances."
+              /></label>
+            </div>
+          </div>
+        </div>
+
+        <div style="width: 40%; float: right">
+          <div class="row dest">
+            <div class="columns form-group3">
+              <label
+                >Convert to
+                <select
+                  class="fc game"
+                  title="Game to convert to"
+                >
+                  <option>CM PER 360</option>
+                  <option>--------</option>
+                  <option>CS:GO</option>
+                  <option selected>Fortnite</option>
+                </select></label
+              >
+            </div>
+
+            <div class="columns form-group3" style="display: none">
+              <label
+                >FOV
+                <input
+                  type="number"
+                  class="fc fov"
+                  value="100"
+              /></label>
+            </div>
+
+            <div class="columns form-group3">
+              <label
+                >Cm per 360
+                <input
+                  type="text"
+                  class="fc cmp360"
+                  value="43"
+                  title="Centimeters to do a 360° turn in game"
+                  readonly
+              /></label>
+            </div>
+            <div class="columns form-group3">
+              <label
+                >Sensitivity
+                <input
+                  type="number"
+                  class="fc sensitivity"
+                  value="1"
+                  title="Calculated in-game sensitivity"
+                  readonly
+              /></label>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="primary button expanded search-button">
+          Convert
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+<a href="chat" class="button" style="text-align: right"
+  >Live Chat about games and features I should add!</a
+>
+
+<script>
+  $(document).ready(function () {
+    $(document).foundation();
+  });
+</script>
+
+<script>
+
+  
+
+
+  var games = {
+    "Borderlands 2": { dpd: 0.0055 },
+    "Call of Duty: Warzone": { dpd: 0.0066 },
+    "Apex Legends": { dpd: 0.022  },
+    "Counter-Strike": { dpd: 0.022 },
+    "Fortnite": { dpd: 0.5715 },
+    "Half-Life 1 & 2": { dpd: 0.022 },
+    "Overwatch": { dpd: 0.0066 },
+    "Quake Live": { dpd: 0.022 },
+    "Team Fortress 2": { dpd: 0.022 },
+    "Unreal Tournament": { dpd: 0.0596 },
+  };
+
+  var html = "";
+  for (var game in games) {
+    html += '<option value="' + game + '">' + game + "</option>";
+  }
+
+  $(".game").html(html);
+
+  $(".game").change(function () {
+    $(this).parents(".row").find(".fov").parents(".form-group").hide();
+
+    calculate();
+  });
+
+  $(".old .sensitivity, .old .fov, .goal .fov, .old .dpi").on(
+    "input",
+    calculate
+  );
+
+  $(".game").change(function () {
+    $(this).parents(".row").find(".fov").parents(".form-group3").hide();
+
+    calc360();
+  });
+
+  $(" .dest .fov, .dest .dpi, .dest .dest-cmp360").on("input", calc360);
+
+  $(".old .sensitivity").val("2.0");
+  $(".old .game").val("Unreal Tournament");
+  $(".goal .game").val("Apex Legends").change();
+  
+
+  function calc360() {
+    var cm = $(".dest .dest-cmp360");
+    var newGame = $(".goal .game").val();
+    var goaldpd = games[newGame].dpd;
+    var oldDpi = $(".dpi").val();
+    var in360 = cm.val() * 0.393701;
+
+    var goal = 360 / (oldDpi * goaldpd * in360);
+
+
+    $(".dest .sensitivity").val(round(goal, 6));
+  }
+
+  function calculate() {
+    var oldGame = $(".old .game").val();
+    var newGame = $(".goal .game").val();
+    var goaldpd = games[newGame].dpd;
+    var olddpd = games[oldGame].dpd;
+    var oldDpi = $(".dpi").val();
+    var oldSens = $(".old .sensitivity").val();
+    var goal = oldSens * (olddpd / goaldpd);
+    var in360 = 360 / (oldDpi * olddpd * oldSens);
+    var cm360 = in360 * 2.54;
+
+
+    $(".goal .sensitivity").val(round(goal, 6));
+    $(".cmp360").val(round(cm360, 3));
+    $(".inp360").val(round(in360, 3));
+  }
+
+  function round(num, decimals) {
+    if (num == Infinity) {
+      return "";
+    }
+    var round = Math.pow(10, decimals);
+    return Math.round(num * round) / round;
+  }
+</script>
+
+
+{% endblock %}

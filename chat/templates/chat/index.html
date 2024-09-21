@@ -1,0 +1,65 @@
+<!-- chat/templates/chat/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Chat Rooms</title>
+    <link rel="stylesheet" href="/static/css/foundation.css" />
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/foundation.js"></script>
+</head>
+<body>
+
+  <div class="hero-section">
+    <div class="hero-section-text">
+      <h1>N0 FUSS GAME SENSITIVITY CHAT?</h1>
+      <h5> Type in a Lobby Name to start</h5>
+    </div>
+  </div>
+
+
+ 
+<div class="input-group input-group-rounded">
+
+  <input class="input-group-field" type="search" id="room-name-input">
+  <div class="input-group-button">
+    <input type="submit" class="button secondary" value="Join Lobby" id="room-name-submit">
+  </div>
+</div>
+   
+ 
+</div>
+
+<a href="chat" class="button" style="text-align: right"
+  >Live Chat about games and features I should add!</a
+  >
+
+
+
+
+
+  <!--  <input id="room-name-input" type="text" size="10"><br>
+    <input id="room-name-submit" type="button" value="Enter">-->
+
+    <script>
+        document.querySelector('#room-name-input').focus();
+        document.querySelector('#room-name-input').onkeyup = function(e) {
+            if (e.keyCode === 13) {  // enter, return
+                document.querySelector('#room-name-submit').click();
+            }
+        };
+
+        document.querySelector('#room-name-submit').onclick = function(e) {
+            var roomName = document.querySelector('#room-name-input').value;
+            window.location.pathname = '/chat/' + roomName + '/';
+        };
+    </script>
+      
+      
+   
+</body>
+
+
+
+</html>
+
